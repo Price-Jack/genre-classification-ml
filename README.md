@@ -6,6 +6,14 @@ This project compares multiple ML architectures to predict a track’s genre and
 **Course:** CAP5610 (Spring 2025)  
 **Team:** Group 8 (Fort Knight) — Natalie Nguyen, Jack Price, Jeovani Overstreet, Vicente Sosa L.
 
+**Fork note:** This repository is a fork of the original group repo. I use this fork as a portfolio-ready version and to clearly document results and **my LSTM contribution**.
+
+**Authors / Contributions**
+- Natalie Nguyen — 1D CNN  
+- **Jack Price — LSTM**  
+- Jeovani Overstreet — MLP  
+- Vicente Sosa L. — Transformer  
+
 ---
 
 ## Project Overview
@@ -61,6 +69,7 @@ LSTM configuration:
 ---
 
 ## Visuals
+Add these images to an `assets/` folder in the repo to enable the embeds below.
 
 ### Model Comparison (Accuracy / F1)
 ![Model comparison](assets/model_comparison.png)
@@ -74,8 +83,6 @@ LSTM configuration:
 ---
 
 ## How to Run
-This repo contains code/notebooks for training and evaluating each model. Typical workflow:
-
 1. Install dependencies:
    ```bash
    pip install -r requirements.txt
