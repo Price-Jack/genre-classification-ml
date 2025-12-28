@@ -1,7 +1,7 @@
 # Genre Classification Using Machine Learning Methods
 
 Automatic Music Genre Classification (AMGC) using the **Spotify Tracks Dataset** (tabular track metadata/features).  
-This project compares multiple ML architectures to predict a track’s genre and evaluate which model family performs best for this kind of **tabular** classification task.
+This project compares multiple ML architectures to predict a track’s genre and evaluates which model family performs best for this **tabular** classification task.
 
 **Course:** CAP5610 (Spring 2025)  
 **Team:** Group 8 (Fort Knight) — Natalie Nguyen, Jack Price, Jeovani Overstreet, Vicente Sosa L.
@@ -9,11 +9,9 @@ This project compares multiple ML architectures to predict a track’s genre and
 ---
 
 ## Project Overview
+Music genre labeling can be inconsistent and subjective across platforms. This project evaluates how well different machine learning architectures classify genres using track-level features from the Spotify Tracks Dataset.
 
-Music “genre” labeling can be ambiguous and inconsistent across platforms. This project evaluates how well different machine learning architectures classify genres using track-level features from the Spotify Tracks Dataset.
-
-We compare four approaches:
-
+Models compared:
 - **MLP (Multi-Layer Perceptron)**
 - **1D CNN**
 - **LSTM**
@@ -22,30 +20,30 @@ We compare four approaches:
 ---
 
 ## Dataset
-
 - **Spotify Tracks Dataset** (Kaggle) by Maharshi Pandya (2022)
 - Input: tabular features/metadata (not raw audio)
-- Labels: genres (reduced to a smaller set for practical classification)
-
-> Note: The original dataset contained many genres; we reduced the number of genres down to a smaller set to make the classification task more stable and meaningful.
+- Labels: genres (reduced to a smaller set to make classification more stable and meaningful)
 
 ---
 
 ## Methodology
 
-### Evaluation Metrics
-Models are evaluated using:
+### Metrics
+We evaluate using:
 - Accuracy
 - Loss
-- Precision / Recall / F1-score (including genre-wise F1)
+- Precision / Recall / F1-score (including per-genre performance)
 - Confusion matrices
-- Training/validation curves (where applicable)
 
-### Models Implemented
-- **MLP:** strong baseline for tabular data
-- **1D CNN:** treats feature vectors with convolutional layers
-- **LSTM:** sequence-style architecture (applied to structured features)
-- **Transformer:** attention-based model applied to the same feature set
+### LSTM (My Contribution)
+My primary contribution was the **LSTM model** and its evaluation.
+
+LSTM configuration:
+- Learning rate: **0.002**
+- Dropout: **0.1**
+- Batch size: **32**
+- Training: **100 epochs** with **early stopping**
+- Architecture: **2 Bidirectional LSTM layers** (128 units then 64 units), Dense(32), Softmax output
 
 ---
 
@@ -62,29 +60,22 @@ Models are evaluated using:
 
 ---
 
-## LSTM Configuration (My Contribution)
+## Visuals
 
-My primary contribution to the group project was the **LSTM model** and its evaluation.
+### Model Comparison (Accuracy / F1)
+![Model comparison](assets/model_comparison.png)
 
-LSTM setup included:
-- Learning rate: **0.002**
-- Dropout: **0.1**
-- Batch size: **32**
-- Training: **100 epochs** with **early stopping**
-- Architecture: **2 Bidirectional LSTM layers** (128 units then 64 units), followed by Dense(32), Softmax output
+### LSTM Confusion Matrix
+![LSTM confusion matrix](assets/lstm_confusion_matrix.png)
+
+### Training Curves (LSTM)
+![LSTM training curves](assets/lstm_training_curves.png)
 
 ---
 
-## Visualizations
+## How to Run
+This repo contains code/notebooks for training and evaluating each model. Typical workflow:
 
-This repo includes:
-- Confusion matrices (per model)
-- Performance curves / comparison plots
-- Genre-wise metric summaries (best/worst classes)
-
-If you add images to the repo, a good pattern is:
-- `assets/` for plots and figures  
-- Embed them here like:
-
-```md
-![LSTM Confusion Matrix](assets/lstm_confusion_matrix.png)
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
