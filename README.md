@@ -6,13 +6,8 @@ This project compares multiple ML architectures to predict a track’s genre and
 **Course:** CAP5610 (Spring 2025)  
 **Team:** Group 8 (Fort Knight) — Natalie Nguyen, Jack Price, Jeovani Overstreet, Vicente Sosa L.
 
-**Fork note:** This repository is a fork of the original group repo. I use this fork as a portfolio-ready version and to clearly document results and **my LSTM contribution**.
-
-**Authors / Contributions**
-- Natalie Nguyen — 1D CNN  
-- **Jack Price — LSTM**  
-- Jeovani Overstreet — MLP  
-- Vicente Sosa L. — Transformer  
+**Fork note:** This repository is a fork of the original group repo. I use this fork as a portfolio-ready version and to clearly document results and **my LSTM contribution**.  
+**Original team repository:** https://github.com/vslam8686/CAP5610_25SpringGroup8
 
 ---
 
